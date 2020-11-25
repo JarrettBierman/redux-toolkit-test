@@ -8,9 +8,7 @@ function RatingCard(props) {
     const handleClick = () => {
         dispatch(removeSpec(props.id));
     }
-
-    console.log(props);
-
+    
     return (
         <div className={"alert alert-info m-2 p-2 text-center"} style={{width: "200px", height:"200px"}}>
             <button type="button" className="close" aria-label="Close" onClick={handleClick}>
