@@ -4,9 +4,24 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { configureStore } from "@reduxjs/toolkit";
+import { Provider } from "react-redux";
+import counterSliceReducer from './features/counterSlice';
+import ratingSliceReducer from './features/ratingsSlice';
+
+const store = configureStore({
+  reducer: {
+    counter: counterSliceReducer,
+    ratings: ratingSliceReducer,
+    // other slices too
+  }
+});
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
